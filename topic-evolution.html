@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evolution of HTTP · HTTP Research</title>
+  <meta name="description" content="Student research site on HTTP, HTTPS, and HTTP/3." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+    <!-- Main navigation (consistent across every page) -->
+    <header class="site-header">
+      <div class="container header-wrap">
+        <a class="brand" href="index.html">HTTP Research</a>
+        <nav aria-label="Main">
+          <ul class="menu">
+            <li><a class="" href="index.html">Home</a></li><li><a class="active" href="topic-evolution.html">Evolution of HTTP</a></li><li><a class="" href="topic-security.html">HTTPS & Security</a></li><li><a class="" href="concepts.html">Key Concepts</a></li><li><a class="" href="references.html">References</a></li><li><a class="" href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+  <main class="container">
+    
+    <!-- Topic Page 1: Evolution -->
+    <article class="content">
+      <h1>Evolution of HTTP</h1>
+      <p>
+        From the minimalist HTTP/0.9 through HTTP/1.1 and the performance‑focused HTTP/2/3, 
+        the protocol evolved to meet the web’s growing needs for speed, security, and scale.
+      </p>
+
+      <h2>Milestones</h2>
+      <ol>
+        <li><strong>HTTP/0.9</strong> (1991): GET only; raw HTML; connection closed after response.</li>
+        <li><strong>HTTP/1.0</strong> (1996): Headers, status codes, and multiple media types.</li>
+        <li><strong>HTTP/1.1</strong> (1997): Persistent connections, chunked transfer, better caching.</li>
+        <li><strong>HTTP/2</strong> (2015): Binary framing, multiplexing, and header compression to reduce latency.</li>
+        <li><strong>HTTP/3</strong> (2022): QUIC over UDP, integrated TLS 1.3, and elimination of head‑of‑line blocking.</li>
+      </ol>
+
+      <h2>Why It Matters</h2>
+      <ul>
+        <li>Scalability for billions of daily requests.</li>
+        <li>Lower latency and improved reliability, especially on mobile networks.</li>
+        <li>Better user privacy and security through encryption by default.</li>
+      </ul>
+    </article>
+    
+  </main>
+  
+  <footer class="site-footer">
+    <div class="container small">
+      <p>This website is a class project for IT 3203. See course site: 
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">https://ksuweb.github.io/IT3203/</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

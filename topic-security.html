@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTTPS & Security · HTTP Research</title>
+  <meta name="description" content="Student research site on HTTP, HTTPS, and HTTP/3." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+    <!-- Main navigation (consistent across every page) -->
+    <header class="site-header">
+      <div class="container header-wrap">
+        <a class="brand" href="index.html">HTTP Research</a>
+        <nav aria-label="Main">
+          <ul class="menu">
+            <li><a class="" href="index.html">Home</a></li><li><a class="" href="topic-evolution.html">Evolution of HTTP</a></li><li><a class="active" href="topic-security.html">HTTPS & Security</a></li><li><a class="" href="concepts.html">Key Concepts</a></li><li><a class="" href="references.html">References</a></li><li><a class="" href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+  <main class="container">
+    
+    <!-- Topic Page 2: Security -->
+    <article class="content">
+      <h1>HTTPS &amp; Security</h1>
+      <p>
+        HTTPS layers HTTP over Transport Layer Security (TLS) to provide confidentiality and integrity.
+        Adoption surged with automated certificate authorities and browser policy nudges.
+      </p>
+
+      <div class="grid-2">
+        <div>
+          <h2>Benefits</h2>
+          <ul>
+            <li>Prevents eavesdropping and tampering.</li>
+            <li>Authenticates servers with certificates.</li>
+            <li>Enables modern web features that require secure origins.</li>
+          </ul>
+          <h2>Trade‑offs</h2>
+          <ul>
+            <li>Operational visibility for network teams can decrease.</li>
+            <li>Early performance overheads (largely mitigated today).</li>
+          </ul>
+        </div>
+        <figure class="card">
+          <img src="assets/http-lock.svg" alt="Lock icon illustrating HTTPS" width="120" height="120">
+          <figcaption>Encryption is now the default expectation on the modern web.</figcaption>
+        </figure>
+      </div>
+    </article>
+    
+  </main>
+  
+  <footer class="site-footer">
+    <div class="container small">
+      <p>This website is a class project for IT 3203. See course site: 
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">https://ksuweb.github.io/IT3203/</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

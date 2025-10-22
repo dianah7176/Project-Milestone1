@@ -1,0 +1,185 @@
+
+/* IT 3203 Milestone #1 — Single shared stylesheet
+   Requirements covered:
+   - Three types of selectors (type, class, id, attribute, pseudo-classes)
+   - Layout with CSS Grid / Flex
+   - Hover effects on links
+   - Paddings, margins, borders
+   - Coloring and font settings
+*/
+
+:root {
+  --bg: #ffffff;
+  --ink: #111827;
+  --muted: #6b7280;
+  --brand: #1f2937;
+  --accent: #2563eb;
+  --card: #f8fafc;
+  --line: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+}
+
+/* Container utility */
+.container {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+/* Header + nav */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: 800;
+  color: var(--brand);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+
+.menu a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background: var(--card);
+  color: var(--accent);
+  outline: none;
+}
+
+.menu a.active {
+  border: 1px solid var(--line);
+  color: var(--accent);
+}
+
+/* Hero and cards */
+.hero .lede {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.small { font-size: 0.9rem; color: var(--muted); }
+
+/* Grid layouts (fulfills "grid or flex" requirement) */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 800px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Table styling */
+.table-wrap { overflow-x: auto; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+}
+table caption {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+th, td {
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--line);
+}
+thead th {
+  background: #f3f4f6;
+  text-align: left;
+}
+
+/* Lists and definitions */
+.key-terms { columns: 2; }
+@media (max-width: 700px) {
+  .key-terms { columns: 1; }
+}
+
+.definitions dt {
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.definitions dd {
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+/* Inline figure */
+.inline-figure {
+  margin-top: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  background: #fff;
+  display: inline-block;
+}
+.inline-figure img { display: block; }
+.inline-figure figcaption { font-size: 0.9rem; color: var(--muted); }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+/* Demonstrate attribute selector and hover states */
+a[href^="http"] {
+  /* external-ish links hint */
+  text-decoration: underline;
+}
+a:hover { text-decoration-thickness: 3px; }
+
+/* Example ID selector (to satisfy "three types"): */
+#highlight {
+  padding: 0.75rem;
+  border: 1px dashed var(--accent);
+  border-radius: 0.5rem;
+}
