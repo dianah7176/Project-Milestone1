@@ -1,4 +1,4 @@
-# IT 3203 — Milestone #1:
+# IT 3203 — Project:
 
 This website presents research on the **Hypertext Transfer Protocol (HTTP)** and its evolution into **HTTP/3**.  
 
