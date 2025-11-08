@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic setup -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Page title and description -->
   <title>Evolution of HTTP · HTTP Research</title>
-  <meta name="description" content="Student research site on HTTP, HTTPS, and HTTP/3.">
+  <meta name="description" content="Overview of the evolution of HTTP from version 0.9 to HTTP/3.">
+
+  <!-- Shared site stylesheet for consistent design -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Site header with navigation menu -->
   <header class="site-header">
     <div class="container header-wrap">
+      <!-- Brand name links back to the homepage -->
       <a class="brand" href="index.html">HTTP Research</a>
+
+      <!-- Main navigation (same across all pages) -->
       <nav aria-label="Main">
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
           <li><a class="active" href="topic-evolution.html">Evolution of HTTP</a></li>
-          <li><a href="topic-security.html">HTTPS & Security</a></li>
+          <li><a href="topic-security.html">HTTPS &amp; Security</a></li>
           <li><a href="concepts.html">Key Concepts</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
@@ -25,62 +34,47 @@
     </div>
   </header>
 
+  <!-- Main content introduces the evolution topic -->
   <main class="container">
     <article class="content">
-      <h1>Evolution of HTTP</h1>
-      <p>From the minimalist HTTP/0.9 through HTTP/1.1 and the performance-focused HTTP/2/3, the protocol evolved to meet the web’s growing needs for speed, security, and scale.</p>
-      <h2>Milestones</h2>
-      <ol>
-        <li><strong>HTTP/0.9</strong> (1991): GET only; raw HTML; connection closed after response.</li>
-        <li><strong>HTTP/1.0</strong> (1996): Headers, status codes, and multiple media types.</li>
-        <li><strong>HTTP/1.1</strong> (1997): Persistent connections, chunked transfer, better caching.</li>
-        <li><strong>HTTP/2</strong> (2015): Binary framing, multiplexing, and header compression to reduce latency.</li>
-        <li><strong>HTTP/3</strong> (2022): QUIC over UDP, integrated TLS 1.3, and elimination of head-of-line blocking.</li>
-      </ol>
-      <div id="highlight">Over time, the Hypertext Transfer Protocol (HTTP) has evolved to make the web faster, safer, and more reliable. Each new version improved how browsers and servers communicate.
+      <!-- Page heading -->
+      <h1>The Evolution of HTTP</h1>
 
-Major changes:
+      <!-- Quick intro paragraph -->
+      <p>The Hypertext Transfer Protocol (HTTP) has evolved through multiple versions since 1991. Each version introduced new features that improved web speed, reliability, and scalability.</p>
 
-HTTP/0.9 and 1.0 (Early Web):
+      <!-- Use section headings to organize the timeline -->
+      <section>
+        <h2>HTTP/0.9 — The Beginning</h2>
+        <p>HTTP/0.9 appeared in 1991 and supported only the <code>GET</code> method. It returned raw HTML with no headers. This version focused on simplicity but lacked flexibility for multimedia or metadata.</p>
+      </section>
 
-Supported only basic text transfers.
+      <section>
+        <h2>HTTP/1.0 — Expanding the Protocol</h2>
+        <p>Released in 1996, HTTP/1.0 introduced request and response headers, content types, and status codes. This upgrade allowed browsers and servers to exchange richer information and support multiple file types.</p>
+      </section>
 
-Closed the connection after every request, making it slow.
+      <section>
+        <h2>HTTP/1.1 — Improving Performance</h2>
+        <p>HTTP/1.1 became the most widely adopted version for two decades. It added persistent connections, chunked transfer encoding, and better caching mechanisms to reduce latency and improve user experience.</p>
+      </section>
 
-No encryption — data was sent in plain text.
+      <section>
+        <h2>HTTP/2 — Modern Optimization</h2>
+        <p>Published in 2015, HTTP/2 replaced the text-based format with a binary framing layer. It introduced multiplexing and header compression, allowing multiple requests to share one connection and reducing overhead.</p>
+      </section>
 
-HTTP/1.1 (1997):
+      <section>
+        <h2>HTTP/3 — Built on QUIC</h2>
+        <p>HTTP/3, finalized in 2022, runs over QUIC instead of TCP. QUIC uses UDP to reduce latency, integrate TLS 1.3 by default, and remove head-of-line blocking. HTTP/3 now powers major websites like Google and Facebook.</p>
+      </section>
 
-Introduced persistent connections, allowing multiple requests on one connection.
-
-Added caching and chunked data transfer for better performance.
-
-Became the foundation of most early web applications.
-
-HTTP/2 (2015):
-
-Added multiplexing (sending many files at once) to reduce load times.
-
-Used binary framing and header compression for efficiency.
-
-Greatly improved speed and bandwidth use.
-
-HTTP/3 (2022):
-
-Built on QUIC, a new transport protocol using UDP instead of TCP.
-
-Integrates TLS 1.3 for automatic encryption.
-
-Eliminates “head-of-line blocking,” making pages load faster even on unstable or mobile networks.
-
-Why these changes matter:
-
-More secure: Every modern version now encrypts traffic by default, keeping users safer online.
-
-Faster performance: Multiplexing and QUIC reduce waiting times and improve page loading.
-
-Better for mobile: QUIC keeps connections stable even when switching between Wi-Fi and data.
-
-More reliable: Built for today’s global internet, HTTP/3 handles weak connections more efficiently.</div>
+      <!-- Visual summary with an icon for consistency -->
+      <figure class="inline-figure">
+        <img src="http-lock.svg" alt="HTTP evolution lock icon" width="140">
+        <figcaption>HTTP/3 builds on secure transport and performance lessons from prior versions.</figcaption>
+      </figure>
     </article>
   </main>
+</body>
+</html>
