@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Set correct character encoding and mobile viewport -->
+  <!-- Set encoding and viewport for correct rendering -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Page title shows in the browser tab -->
+  <!-- Title and page purpose -->
   <title>Quiz · HTTP/HTTPS</title>
+  <meta name="description" content="Self-assessment quiz on HTTP versions, HTTPS/TLS, and HTTP/3.">
 
-  <!-- Reuse your site-wide styles for a consistent look -->
+  <!-- Reuse the shared site stylesheet for a consistent look -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- Add small quiz-specific styles that build on styles.css -->
   <style>
-    /* Style the quiz container as a card */
+    /* Style the quiz as a card and space sections clearly */
     .quiz-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:.75rem;padding:1rem}
-
-    /* Group related inputs with fieldset and legend */
     fieldset{border:1px solid #e5e7eb;border-radius:.5rem;padding:1rem;margin:1rem 0}
     legend{padding:0 .4rem;font-weight:700}
-
-    /* Space labels and options for easy reading */
     .q{display:grid;gap:.5rem;margin:.5rem 0}
     .options{display:grid;gap:.35rem;margin-top:.25rem}
     .hint{color:#6b7280;font-size:.92rem}
 
-    /* Style action buttons for clear calls to action */
+    /* Style actions and add distinct primary button */
     .actions{display:flex;gap:.75rem;margin-top:1rem}
     button{cursor:pointer;border:1px solid #e5e7eb;border-radius:.6rem;padding:.6rem 1rem;background:#fff}
     .primary{background:#2563eb;border-color:#2563eb;color:#fff}
     .primary:hover{filter:brightness(.98)}
     .secondary:hover{outline:2px solid #2563eb;outline-offset:1px}
 
-    /* Style the results area with clear color feedback */
+    /* Show results with strong color cues */
     #results{margin-top:1.25rem;display:none}
     .scoreline{font-weight:800}
     .pass{color:#16a34a}
@@ -43,13 +40,13 @@
   </style>
 </head>
 <body>
-  <!-- Keep the same header and menu as your other pages -->
+  <!-- Keep the same site header and navigation on every page -->
   <header class="site-header">
     <div class="container header-wrap">
       <!-- Brand links back to Home -->
       <a class="brand" href="index.html">HTTP Research</a>
 
-      <!-- Main navigation appears on every page -->
+      <!-- Main site menu (add Quiz and mark it active here) -->
       <nav aria-label="Main">
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
@@ -58,20 +55,19 @@
           <li><a href="concepts.html">Key Concepts</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
-          <!-- Mark Quiz as active on this page -->
           <li><a class="active" href="quiz.html">Quiz</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main content area holds the quiz -->
+  <!-- Main content holds the quiz UI and results -->
   <main class="container">
-    <!-- Introduce the page purpose -->
+    <!-- Introduce the page and set user expectations -->
     <h1>HTTP/HTTPS Self-Assessment Quiz</h1>
-    <p class="lede">Test your knowledge of HTTP versions, HTTPS/TLS, and HTTP/3. Submit to see your score and detailed feedback on this page.</p>
+    <p class="lede">Answer all questions and submit. See pass/fail, total score, and per-question feedback on this page.</p>
 
-    <!-- Use a form so the browser manages inputs naturally -->
+    <!-- Use a form so the browser manages input focus and labels -->
     <form id="quiz" class="quiz-card" novalidate>
       <!-- Q1: Fill-in-the-blank (required by rubric) -->
       <fieldset>
@@ -83,7 +79,7 @@
         </div>
       </fieldset>
 
-      <!-- Q2: Single-choice (1 of 3 required) -->
+      <!-- Q2: Single-choice 1 -->
       <fieldset>
         <legend>Q2 · Single choice (20 pts)</legend>
         <div class="q">
@@ -97,7 +93,7 @@
         </div>
       </fieldset>
 
-      <!-- Q3: Single-choice (2 of 3 required) -->
+      <!-- Q3: Single-choice 2 -->
       <fieldset>
         <legend>Q3 · Single choice (20 pts)</legend>
         <div class="q">
@@ -111,7 +107,7 @@
         </div>
       </fieldset>
 
-      <!-- Q4: Single-choice (3 of 3 required) -->
+      <!-- Q4: Single-choice 3 -->
       <fieldset>
         <legend>Q4 · Single choice (20 pts)</legend>
         <div class="q">
@@ -125,7 +121,7 @@
         </div>
       </fieldset>
 
-      <!-- Q5: Multi-select (required by rubric: more than one correct) -->
+      <!-- Q5: Multi-select with more than one correct answer -->
       <fieldset>
         <legend>Q5 · Multi-select (20 pts)</legend>
         <div class="q">
@@ -139,42 +135,39 @@
         </div>
       </fieldset>
 
-      <!-- Submit and Reset controls -->
+      <!-- Submit and Reset actions -->
       <div class="actions">
         <button type="submit" class="primary">Submit Quiz</button>
         <button type="button" id="resetBtn" class="secondary">Retake / Reset</button>
       </div>
 
-      <!-- Results render here after submit; keep on the same page -->
+      <!-- Results render here after submit -->
       <section id="results" aria-live="polite"></section>
     </form>
   </main>
 
-  <!-- Omit the footer if your instructor does not want it -->
-  <!-- <footer class="site-footer"><div class="container small"><p>This website is a class project for IT 3203.</p></div></footer> -->
-
-  <!-- Add simple, readable JavaScript for grading and feedback -->
+  <!-- Add simple JS for scoring, feedback, and reset -->
   <script>
-    // Run once when the page loads
+    // Run once on load to set up handlers and the answer key
     (function(){
-      // Grab the form and the results area
+      // Grab the form and results panel
       const form = document.getElementById('quiz');
       const results = document.getElementById('results');
       const resetBtn = document.getElementById('resetBtn');
 
-      // Define the correct answers
+      // Define correct answers for each question
       const key = {
-        q1: (v) => (v || '').trim().toLowerCase() === 'quic',  // fill-in
-        q2: '1.1',                                             // radios
+        q1: (v) => (v || '').trim().toLowerCase() === 'quic',
+        q2: '1.1',
         q3: 'quic',
         q4: '2',
-        q5: new Set(['conf','integ','auth'])                   // checkboxes
+        q5: new Set(['conf','integ','auth'])
       };
 
-      // Assign point values to each question
+      // Assign point values
       const pts = { q1:20, q2:20, q3:20, q4:20, q5:20 };
 
-      // Check a multi-select by exact match
+      // Check multi-select by exact set match
       function gradeMulti(selected, correctSet){
         if(selected.length === 0) return false;
         const s = new Set(selected);
@@ -183,18 +176,18 @@
         return true;
       }
 
-      // Handle form submission: score answers and show feedback
+      // Score the quiz and show feedback without leaving the page
       form.addEventListener('submit', function(e){
         e.preventDefault();
 
-        // Read all answer values
+        // Read user answers
         const a1 = document.getElementById('q1').value;
         const a2 = (form.querySelector('input[name="q2"]:checked') || {}).value || '';
         const a3 = (form.querySelector('input[name="q3"]:checked') || {}).value || '';
         const a4 = (form.querySelector('input[name="q4"]:checked') || {}).value || '';
         const a5 = Array.from(form.querySelectorAll('input[name="q5"]:checked')).map(el => el.value);
 
-        // Score each question
+        // Score answers and collect per-question details
         let total = 0;
         const details = [];
 
@@ -208,15 +201,15 @@
         details.push({ q:'Q3', ok:c3, your:a3 || '(blank)', ans:'QUIC', note:'QUIC removes TCP head-of-line blocking.' });
 
         const c4 = (a4 === key.q4); if(c4) total += pts.q4;
-        details.push({ q:'Q4', ok:c4, your:a4 ? (a4==='2'?'HTTP/2':a4==='3'?'HTTP/3':'HTTP/'+a4) : '(blank)', ans:'HTTP/2', note:'HTTP/2 adds multiplexing and header compression.' });
+        details.push({ q:'Q4', ok:c4, your:a4 ? (a4==='2' ? 'HTTP/2' : a4==='3' ? 'HTTP/3' : 'HTTP/'+a4) : '(blank)', ans:'HTTP/2', note:'HTTP/2 adds multiplexing and header compression.' });
 
         const c5 = gradeMulti(a5, key.q5); if(c5) total += pts.q5;
-        details.push({ q:'Q5', ok:c5, your:a5.length ? a5.join(', ') : '(none)', ans:'Confidentiality, Integrity, Authentication', note:'HTTPS/TLS provides these security properties.' });
+        details.push({ q:'Q5', ok:c5, your:a5.length ? a5.join(', ') : '(none)', ans:'Confidentiality, Integrity, Authentication', note:'HTTPS/TLS provides these properties.' });
 
-        // Decide pass or fail at 70 points
+        // Decide pass or fail using a 70-point threshold
         const passed = total >= 70;
 
-        // Show the score and detailed feedback
+        // Render the total and the per-question feedback
         results.style.display = 'block';
         results.innerHTML = `
           <div class="scoreline ${passed ? 'pass':'fail'}">${passed ? 'PASS' : 'FAIL'} — Score: ${total}/100</div>
@@ -230,11 +223,11 @@
           `).join('')}
         `;
 
-        // Move the viewport to the results
+        // Move focus to the results for quick review
         results.scrollIntoView({ behavior:'smooth', block:'start' });
       });
 
-      // Clear inputs and feedback for a fresh attempt
+      // Clear inputs and results so users can retake the quiz
       resetBtn.addEventListener('click', function(){
         form.reset();
         results.style.display = 'none';
