@@ -1,7 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect x="10" y="40" width="80" height="45" rx="6" ry="6" fill="#dbeafe" stroke="#2563eb"/>
+  <!-- Outer rounded rectangle for body -->
+  <rect x="10" y="40" width="80" height="45" rx="6" ry="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+
+  <!-- Lock shackle -->
   <rect x="25" y="25" width="50" height="30" rx="12" ry="12" fill="none" stroke="#1f2937" stroke-width="4"/>
+
+  <!-- Keyhole circle and stem -->
   <circle cx="50" cy="63" r="6" fill="#1f2937"/>
   <rect x="48" y="63" width="4" height="12" fill="#1f2937"/>
-  <text x="50" y="16" text-anchor="middle" font-family="Arial" font-size="10" fill="#1f2937">HTTP/HTTPS</text>
+
+  <!-- Label text -->
+  <text x="50" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1f2937">
+    HTTP / HTTPS
+  </text>
 </svg>
