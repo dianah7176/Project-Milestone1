@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic setup -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Page title and description -->
   <title>Key Concepts · HTTP Research</title>
-  <meta name="description" content="Student research site on HTTP, HTTPS, and HTTP/3.">
+  <meta name="description" content="Key terms for understanding HTTP versions, HTTPS/TLS, QUIC, and web performance.">
+
+  <!-- Shared stylesheet for consistent design -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header with the same navigation structure -->
   <header class="site-header">
     <div class="container header-wrap">
+      <!-- Brand links back to the homepage -->
       <a class="brand" href="index.html">HTTP Research</a>
+
+      <!-- Main navigation (same across the site) -->
       <nav aria-label="Main">
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="topic-evolution.html">Evolution of HTTP</a></li>
-          <li><a href="topic-security.html">HTTPS & Security</a></li>
+          <li><a href="topic-security.html">HTTPS &amp; Security</a></li>
           <li><a class="active" href="concepts.html">Key Concepts</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
@@ -25,22 +34,48 @@
     </div>
   </header>
 
+  <!-- Main content lists core terms with short, clear definitions -->
   <main class="container">
-    <section class="content">
-      <h1>Key Concepts</h1>
-      <dl class="definitions">
-        <dt>Statelessness</dt>
-        <dd>Each request is independent; state is maintained via cookies, sessions, or tokens in applications.</dd>
-        <dt>Multiplexing</dt>
-        <dd>Multiple concurrent streams over a single connection (HTTP/2 and HTTP/3) to reduce latency.</dd>
-        <dt>Head-of-line Blocking</dt>
-        <dd>When one delayed item holds up others on the same connection; solved at the transport level by QUIC.</dd>
-        <dt>TLS (Transport Layer Security)</dt>
-        <dd>Cryptographic protocol providing confidentiality and integrity; basis of HTTPS.</dd>
-        <dt>QUIC</dt>
-        <dd>UDP-based transport with integrated TLS 1.3 and stream-level recovery; foundation for HTTP/3.</dd>
-        <dt>Caching</dt>
-        <dd>Re-using responses with controls such as <code>Cache-Control</code>, <code>ETag</code>, and validators.</dd>
-      </dl>
-    </section>
+    <!-- Page heading -->
+    <h1>Key Concepts</h1>
+    <p class="lede">Use these terms while you study HTTP versions and HTTPS. Each definition stays short and practical.</p>
+
+    <!-- Definition list groups terms and meanings -->
+    <dl class="definitions">
+      <!-- Explain statelessness clearly -->
+      <dt>Statelessness</dt>
+      <dd>Each request stands alone. Apps store user state with cookies, sessions, or tokens.</dd>
+
+      <!-- Define persistent connections in plain language -->
+      <dt>Persistent Connection</dt>
+      <dd>One TCP connection serves multiple requests and responses to reduce setup delay. HTTP/1.1 made this the default.</dd>
+
+      <!-- Describe multiplexing and its benefit -->
+      <dt>Multiplexing</dt>
+      <dd>One connection carries many parallel streams to cut wait time. HTTP/2 and HTTP/3 use it.</dd>
+
+      <!-- Clarify head-of-line blocking and how QUIC helps -->
+      <dt>Head-of-Line Blocking</dt>
+      <dd>One stalled packet blocks others on the same TCP connection. QUIC avoids this by recovering streams independently.</dd>
+
+      <!-- Keep TLS definition focused on what it provides -->
+      <dt>TLS (Transport Layer Security)</dt>
+      <dd>Security layer that adds confidentiality, integrity, and authentication to web traffic. HTTPS uses TLS.</dd>
+
+      <!-- Explain QUIC’s role and why it matters -->
+      <dt>QUIC</dt>
+      <dd>UDP-based transport that integrates TLS 1.3 and stream-level recovery. It powers HTTP/3 for lower latency and better mobility.</dd>
+
+      <!-- Show common cache controls without overexplaining -->
+      <dt>Caching</dt>
+      <dd>Reuse responses to speed repeat loads. Common headers include <code>Cache-Control</code>, <code>ETag</code>, and validators.</dd>
+    </dl>
+
+    <!-- Optional visual to tie concepts to security theme -->
+    <figure class="inline-figure">
+      <img src="http-lock.svg" alt="Security lock icon for HTTPS" width="120">
+      <figcaption>TLS and QUIC raise both speed and security in modern HTTP.</figcaption>
+    </figure>
   </main>
+</body>
+</html>
