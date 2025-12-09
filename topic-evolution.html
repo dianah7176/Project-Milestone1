@@ -69,6 +69,27 @@
         <p>HTTP/3, finalized in 2022, runs over QUIC instead of TCP. QUIC uses UDP to reduce latency, integrate TLS 1.3 by default, and remove head-of-line blocking. HTTP/3 now powers major websites like Google and Facebook.</p>
       </section>
 
+      </section>
+        <h2>How HTTP Works</h2>
+        <p>HTTP follows a client–server communication model. A web browser acts as the client and sends a request to a server. The server processes the request and sends back a response that includes a status code and the requested resource, such as a web page, image, or data file.</p>
+        <p>Each HTTP request contains a method like GET or POST, a target URL, headers, and sometimes a message body. The server responds with a status code, headers, and the requested content. This simple request–response structure allows the web to scale efficiently across millions of devices.</p>
+      </section>
+
+       </section>
+        <h2>Stateless Communication</h2>
+        <p>HTTP is a stateless protocol. This means that each request the client sends is independent and does not rely on previous interactions. The server does not store session memory between requests unless additional technologies such as cookies or session tokens are used.</p></p>
+        <p>Statelessness allows HTTP to remain fast and scalable. However, websites must rely on cookies and authentication tokens to create personalized user experiences such as login sessions and shopping carts.</p>
+      </section>
+
+       </section>
+        <h2>Key Improvements Across HTTP Versions</h2>
+        <ul>
+          <li><strong>HTTP/1.1:</strong> Added persistent connections, chunked transfer encoding, and better caching.</li>
+          <li><strong>HTTP/2:</strong> Introduced binary framing, multiplexing, and header compression to improve speed.</li>
+          <li><strong>HTTP/3:</strong> Uses the QUIC protocol over UDP to reduce latency and eliminate head-of-line blocking.</li>
+        </ul>
+       </section>
+
       <!-- Visual summary with an icon for consistency -->
       <figure class="inline-figure">
         <img src="http-lock.svg" alt="HTTP evolution lock icon" width="140">
