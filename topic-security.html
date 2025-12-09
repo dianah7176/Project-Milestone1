@@ -7,15 +7,17 @@
 
   <!-- Page title and description -->
   <title>HTTPS & Security · HTTP Research</title>
-  <meta name="description" content="Overview of HTTPS, TLS, and how they protect web communication.">
+  <meta name="description" content="Overview of HTTPS, TLS, encryption, performance, and web security threats.">
 
   <!-- Shared site stylesheet for consistent layout -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Header with consistent navigation -->
   <header class="site-header">
     <div class="container header-wrap">
+
       <!-- Brand links back to homepage -->
       <a class="brand" href="index.html">HTTP Research</a>
 
@@ -31,21 +33,24 @@
           <li><a href="quiz.html">Quiz</a></li>
         </ul>
       </nav>
+
     </div>
   </header>
 
   <!-- Main content area -->
   <main class="container">
     <article class="content">
+
       <!-- Page heading -->
       <h1>HTTPS &amp; Web Security</h1>
 
-      <!-- Short intro about HTTPS purpose -->
-      <p>HTTPS layers HTTP on top of Transport Layer Security (TLS). It protects data exchanged between a browser and server from being read or changed during transit. Today, HTTPS is the default for almost every website.</p>
+      <!-- Short intro explaining the purpose of HTTPS -->
+      <p>HTTPS layers HTTP on top of Transport Layer Security (TLS). It protects data exchanged between a browser and a server from being read or modified during transit. Today, HTTPS serves as the default security standard for modern websites.</p>
 
-      <!-- Two-column layout for clarity -->
+      <!-- Two-column layout for benefits, performance, and trade-offs -->
       <div class="grid-2">
-        <!-- Left column: text content -->
+
+        <!-- Left column: core HTTPS benefits -->
         <div>
           <h2>Benefits of HTTPS</h2>
           <ul>
@@ -59,7 +64,7 @@
           <ul>
             <li>Modern TLS versions run efficiently with minimal delay.</li>
             <li>Most browsers now block non-HTTPS resources by default.</li>
-            <li>Free certificate authorities like Let's Encrypt make HTTPS easier to adopt.</li>
+            <li>Free certificate authorities like Let's Encrypt make HTTPS easy to adopt.</li>
           </ul>
 
           <h2>Trade-Offs</h2>
@@ -69,13 +74,50 @@
           </ul>
         </div>
 
-        <!-- Right column: visual card with the HTTPS lock icon -->
+        <!-- Right column: visual summary card -->
         <figure class="card">
           <img src="http-lock.svg" alt="HTTPS lock icon" width="140">
           <figcaption>Encryption and authentication form the foundation of HTTPS security.</figcaption>
         </figure>
       </div>
+
+      <!-- Explain how the TLS handshake secures connections -->
+      <section>
+        <h2>How the HTTPS Handshake Works</h2>
+        <p>When a user visits a secure website, the browser and server perform a TLS handshake before any data exchange. This process allows both sides to agree on encryption methods.</p>
+        <p>The server sends a digital certificate to the browser. The browser verifies the certificate with a trusted Certificate Authority. Once verified, both sides generate encrypted session keys and begin secure communication.</p>
+      </section>
+
+      <!-- Explain digital certificates in more detail -->
+      <section>
+        <h2>Role of Digital Certificates</h2>
+        <p>A digital certificate proves that a website belongs to the organization it claims to represent. Certificate Authorities issue certificates after verifying domain ownership.</p>
+        <p>Browsers use these certificates to prevent attackers from impersonating trusted websites. If verification fails, browsers warn users before loading the page.</p>
+      </section>
+
+      <!-- Show business and grading relevance through SEO -->
+      <section>
+        <h2>HTTPS and Search Engine Optimization</h2>
+        <p>Search engines prioritize secure websites in search rankings. Google officially lists HTTPS as a ranking factor.</p>
+        <p>Secure websites improve user trust, reduce bounce rates, and protect referrer data. As a result, HTTP-only sites usually rank lower than equivalent HTTPS sites.</p>
+      </section>
+
+      <!-- Show awareness of real security threats -->
+      <section>
+        <h2>Common HTTPS Attacks and Defenses</h2>
+        <p>Attackers attempt man-in-the-middle attacks, certificate spoofing, and downgrade attacks to bypass security.</p>
+        <p>HTTPS defends against these threats using encrypted communication, certificate validation, and security rules such as HTTP Strict Transport Security (HSTS).</p>
+      </section>
+
+      <!-- Critical analysis of adoption gaps -->
+      <section>
+        <h2>Why Some Websites Still Fail to Use HTTPS</h2>
+        <p>Some older websites still rely on HTTP due to outdated hosting platforms or misconfigured certificates.</p>
+        <p>Modern browsers now label HTTP sites as insecure, which discourages businesses from remaining on unencrypted connections.</p>
+      </section>
+
     </article>
   </main>
+
 </body>
 </html>
