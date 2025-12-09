@@ -124,7 +124,6 @@ p.lede {
 table {
   border-collapse: collapse;
   width: 100%;
-  /* Let the wrapper handle scrolling on small screens */
   background: #fff;
 }
 
@@ -227,28 +226,14 @@ textarea:focus-visible {
 }
 
 /* =========================================================
-   Accessibility helpers
-   ========================================================= */
-.sr-only {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0,0,1px,1px);
-  white-space: nowrap; border: 0;
-}
-
-/* =========================================================
    Responsive layout
    ========================================================= */
-
-/* Tablet adjustments */
 @media (max-width:900px){
   .grid-2 { grid-template-columns: 1fr; }
   .container { padding: 0.75rem; }
   nav .menu { flex-wrap: wrap; }
 }
 
-/* Phone layout */
 @media (max-width:600px){
   body { font-size: 0.95rem; }
   .menu { flex-direction: column; align-items: flex-start; }
@@ -258,8 +243,7 @@ textarea:focus-visible {
 }
 
 /* =========================================================
-   Quiz-specific styling  
-   (Keeps radio buttons aligned on mobile)
+   QUIZ MOBILE SAFE LAYOUT (FINAL FIX)
    ========================================================= */
 
 .quiz-card {
@@ -270,28 +254,20 @@ textarea:focus-visible {
   margin: 1rem 0;
 }
 
-/* Spacing between question parts */
 .q {
-  display: grid;
-  gap: .5rem;
+  display: block;
   margin: .5rem 0;
 }
 
-/* Stack options cleanly on all devices */
 .options {
-  display: flex;
-  flex-direction: column;
-  gap: .35rem;
+  display: block;
   margin-top: .25rem;
 }
 
-/* Keep radio/checkbox aligned with text */
 .options label {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
+  display: block;
   width: 100%;
-  white-space: normal;
+  margin-bottom: .4rem;
 }
 
 .hint {
@@ -299,7 +275,6 @@ textarea:focus-visible {
   font-size: .92rem;
 }
 
-/* Submit + Reset buttons */
 .actions {
   display: flex;
   gap: .75rem;
@@ -307,7 +282,6 @@ textarea:focus-visible {
   flex-wrap: wrap;
 }
 
-/* Results section */
 #results {
   margin-top: 1.25rem;
   display: none;
@@ -331,44 +305,4 @@ textarea:focus-visible {
 .bad {
   color: #dc2626;
   font-weight: 700;
-}
-
-/* Slightly tighter padding on phones */
-@media (max-width:600px){
-  .quiz-card { padding: .75rem; }
-  fieldset { padding: .75rem; }
-}
-
-/* ===== MOBILE QUIZ FIX ===== */
-@media (max-width: 600px) {
-
-  .quiz-card {
-    padding: .75rem;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  fieldset {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .q {
-    max-width: 100%;
-  }
-
-  .options {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 100%;
-  }
-
-  .options label {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    white-space: normal;
-  }
 }
