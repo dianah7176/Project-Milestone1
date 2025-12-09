@@ -124,7 +124,7 @@ p.lede {
 table {
   border-collapse: collapse;
   width: 100%;
-  min-width: 600px;
+  /* Let the wrapper handle scrolling on small screens */
   background: #fff;
 }
 
