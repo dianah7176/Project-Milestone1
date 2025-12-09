@@ -1,5 +1,9 @@
-/* ========== Base layout and typography ========== */
-* { box-sizing: border-box; }
+/* =========================================================
+   Base layout and typography
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   margin: 0;
@@ -10,14 +14,16 @@ html, body {
   line-height: 1.6;
 }
 
-/* Limit content width and add breathing room */
+/* Container keeps line length readable on large screens */
 .container {
   width: min(1100px, 92vw);
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* ========== Header and navigation ========== */
+/* =========================================================
+   Header and navigation
+   ========================================================= */
 .site-header {
   position: sticky;
   top: 0;
@@ -33,6 +39,7 @@ html, body {
   flex-wrap: wrap;
 }
 
+/* Site title link */
 .brand {
   font-weight: 800;
   font-size: 1.25rem;
@@ -40,7 +47,7 @@ html, body {
   text-decoration: none;
 }
 
-/* Navigation links */
+/* Navigation menu layout */
 .menu {
   list-style: none;
   display: flex;
@@ -49,6 +56,7 @@ html, body {
   padding: 0;
 }
 
+/* Navigation links */
 .menu a {
   display: block;
   padding: .6rem .9rem;
@@ -57,6 +65,7 @@ html, body {
   text-decoration: none;
 }
 
+/* Hover and focus feedback */
 .menu a:hover,
 .menu a:focus-visible {
   background: #f8fafc;
@@ -64,17 +73,33 @@ html, body {
   outline: none;
 }
 
+/* Highlight the current page */
 .menu a.active {
   border: 1px solid #e5e7eb;
   color: #2563eb;
 }
 
-/* ========== Headings and paragraphs ========== */
-h1, h2, h3 { color: #111827; margin-top: 1rem; }
-p.lede { color: #6b7280; max-width: 70ch; }
-.small { font-size: .92rem; color: #6b7280; }
+/* =========================================================
+   Text styles
+   ========================================================= */
+h1, h2, h3 {
+  color: #111827;
+  margin-top: 1rem;
+}
 
-/* ========== Cards and grids ========== */
+p.lede {
+  color: #6b7280;
+  max-width: 70ch;
+}
+
+.small {
+  font-size: .92rem;
+  color: #6b7280;
+}
+
+/* =========================================================
+   Cards and grid layout
+   ========================================================= */
 .card {
   background: #f8fafc;
   border: 1px solid #e5e7eb;
@@ -88,8 +113,13 @@ p.lede { color: #6b7280; max-width: 70ch; }
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* ========== Tables ========== */
-.table-wrap { overflow-x: auto; margin: 1rem 0; }
+/* =========================================================
+   Tables
+   ========================================================= */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
 
 table {
   border-collapse: collapse;
@@ -103,11 +133,23 @@ th, td {
   border: 1px solid #e5e7eb;
 }
 
-th { background: #f3f4f6; text-align: left; }
+th {
+  background: #f3f4f6;
+  text-align: left;
+}
 
-/* ========== Figures and images ========== */
-.inline-figure { text-align: center; margin: 1.5rem auto; }
-.inline-figure img { display: block; margin: 0 auto; }
+/* =========================================================
+   Images and figures
+   ========================================================= */
+.inline-figure {
+  text-align: center;
+  margin: 1.5rem auto;
+}
+
+.inline-figure img {
+  display: block;
+  margin: 0 auto;
+}
 
 figcaption {
   font-size: .9rem;
@@ -115,24 +157,41 @@ figcaption {
   margin-top: .5rem;
 }
 
-/* ========== Definition lists (concepts page) ========== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   Definition lists (Concepts page)
+   ========================================================= */
 dl.definitions { margin-top: 1rem; }
 dt { font-weight: 700; margin-top: .75rem; }
 dd { margin-left: 1rem; margin-bottom: .5rem; }
 
-/* ========== Reference lists (references page) ========== */
+/* =========================================================
+   References page list
+   ========================================================= */
 .refs {
   list-style: disc inside;
   display: grid;
   gap: .4rem;
   margin: .75rem 0 1.25rem;
 }
-.refs a { color: #1f2937; }
-.refs a:hover,
-.refs a:focus-visible { color: #2563eb; outline: none; }
 
-/* ========== Forms (upgrade #1) ========== */
-/* Style text inputs and selects consistently */
+.refs a {
+  color: #1f2937;
+}
+
+.refs a:hover,
+.refs a:focus-visible {
+  color: #2563eb;
+  outline: none;
+}
+
+/* =========================================================
+   Form inputs
+   ========================================================= */
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -147,59 +206,17 @@ textarea {
   background: #fff;
 }
 
-/* Show clear focus without harsh glow */
-input[type="text"]:focus-visible,
-input[type="email"]:focus-visible,
-input[type="url"]:focus-visible,
-input[type="number"]:focus-visible,
+/* Focus highlight for accessibility */
+input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
   outline: 2px solid #2563eb;
   outline-offset: 1px;
 }
 
-/* Align checkboxes/radios with labels */
-.options label {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-
-/* Keep fieldsets clean and readable */
-fieldset {
-  border: 1px solid #e5e7eb;
-  border-radius: .5rem;
-  padding: 1rem;
-  margin: 1rem 0;
-}
-legend { padding: 0 .4rem; font-weight: 700; }
-
-/* ========== Buttons (upgrade #2) ========== */
-button,
-.btn {
-  cursor: pointer;
-  border: 1px solid #e5e7eb;
-  border-radius: .6rem;
-  padding: .6rem 1rem;
-  background: #fff;
-  color: #1f2937;
-}
-
-/* Primary action */
-button.primary,
-.btn-primary {
-  background: #2563eb;
-  border-color: #2563eb;
-  color: #fff;
-}
-
-/* Hover/active/focus states */
-button:hover,
-.btn:hover { filter: brightness(.98); }
-button:focus-visible,
-.btn:focus-visible { outline: 2px solid #2563eb; outline-offset: 1px; }
-
-/* ========== Footer ========== */
+/* =========================================================
+   Footer
+   ========================================================= */
 .site-footer {
   border-top: 1px solid #e5e7eb;
   margin-top: 2rem;
@@ -209,7 +226,9 @@ button:focus-visible,
   text-align: center;
 }
 
-/* ========== A11y utility ========== */
+/* =========================================================
+   Accessibility helpers
+   ========================================================= */
 .sr-only {
   position: absolute !important;
   width: 1px; height: 1px;
@@ -218,57 +237,104 @@ button:focus-visible,
   white-space: nowrap; border: 0;
 }
 
-/* ========== Responsive layout ========== */
+/* =========================================================
+   Responsive layout
+   ========================================================= */
+
+/* Tablet adjustments */
 @media (max-width:900px){
-  .grid-2{grid-template-columns:1fr;}
-  .container{padding:0.75rem;}
-  nav .menu{flex-wrap:wrap;}
+  .grid-2 { grid-template-columns: 1fr; }
+  .container { padding: 0.75rem; }
+  nav .menu { flex-wrap: wrap; }
 }
+
+/* Phone layout */
 @media (max-width:600px){
-  body{font-size:0.95rem;}
-  .menu{flex-direction:column;align-items:flex-start;}
-  .menu a{width:100%;}
-  table{font-size:0.9rem;}
-  input,button,select{font-size:1rem;width:100%;}
+  body { font-size: 0.95rem; }
+  .menu { flex-direction: column; align-items: flex-start; }
+  .menu a { width: 100%; }
+  table { font-size: 0.9rem; }
+  input, button, select { font-size: 1rem; width: 100%; }
 }
-img{max-width:100%;height:auto;}
 
+/* =========================================================
+   Quiz-specific styling  
+   (Keeps radio buttons aligned on mobile)
+   ========================================================= */
 
-/* ========== Quiz-specific styles ========== */
 .quiz-card {
   background: #f8fafc;
   border: 1px solid #e5e7eb;
   border-radius: .75rem;
   padding: 1rem;
+  margin: 1rem 0;
 }
 
-.q { display: grid; gap: .5rem; margin: .5rem 0; }
-.options { display: grid; gap: .35rem; margin-top: .25rem; }
-.hint { color: #6b7280; font-size: .92rem; }
-
-.actions { display: flex; gap: .75rem; margin-top: 1rem; }
-
-button {
-  cursor: pointer;
-  border: 1px solid #e5e7eb;
-  border-radius: .6rem;
-  padding: .6rem 1rem;
-  background: #fff;
+/* Spacing between question parts */
+.q {
+  display: grid;
+  gap: .5rem;
+  margin: .5rem 0;
 }
 
-.primary {
-  background: #2563eb;
-  border-color: #2563eb;
-  color: #fff;
+/* Stack options cleanly on all devices */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  margin-top: .25rem;
 }
 
-.primary:hover { filter: brightness(.98); }
-.secondary:hover { outline: 2px solid #2563eb; outline-offset: 1px; }
+/* Keep radio/checkbox aligned with text */
+.options label {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  white-space: normal;
+}
 
-#results { margin-top: 1.25rem; display: none; }
+.hint {
+  color: #6b7280;
+  font-size: .92rem;
+}
+
+/* Submit + Reset buttons */
+.actions {
+  display: flex;
+  gap: .75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Results section */
+#results {
+  margin-top: 1.25rem;
+  display: none;
+}
+
 .scoreline { font-weight: 800; }
 .pass { color: #16a34a; }
 .fail { color: #dc2626; }
-.perq { border-top: 1px dashed #e5e7eb; padding-top: .75rem; margin-top: .75rem; }
-.ok { color: #16a34a; font-weight: 700; }
-.bad { color: #dc2626; font-weight: 700; }
+
+.perq {
+  border-top: 1px dashed #e5e7eb;
+  padding-top: .75rem;
+  margin-top: .75rem;
+}
+
+.ok {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.bad {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* Slightly tighter padding on phones */
+@media (max-width:600px){
+  .quiz-card { padding: .75rem; }
+  fieldset { padding: .75rem; }
+}
