@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Set character encoding and layout scale -->
+  <!-- Basic setup for encoding and responsive scaling -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Page title and short description -->
+  <!-- Page title and metadata -->
   <title>References & Resources · HTTP Research</title>
-  <meta name="description" content="Student research site on HTTP, HTTPS, and HTTP/3.">
+  <meta name="description" content="Reference list for research on HTTP, HTTPS, TLS, and HTTP/3.">
 
-  <!-- Link shared stylesheet for consistent design -->
+  <!-- Shared stylesheet for consistent site design -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Header and navigation -->
+  <!-- Header and main navigation -->
   <header class="site-header">
     <div class="container header-wrap">
-      <!-- Brand name links back to homepage -->
+
+      <!-- Brand link to homepage -->
       <a class="brand" href="index.html">HTTP Research</a>
 
-      <!-- Main navigation menu (same across all pages) -->
+      <!-- Navigation menu used on all pages -->
       <nav aria-label="Main">
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="topic-evolution.html">Evolution of HTTP</a></li>
-          <li><a href="topic-security.html">HTTPS & Security</a></li>
+          <li><a href="topic-security.html">HTTPS &amp; Security</a></li>
           <li><a href="concepts.html">Key Concepts</a></li>
           <li><a class="active" href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="quiz.html">Quiz</a></li>
         </ul>
       </nav>
+
     </div>
   </header>
 
-  <!-- Main section holds the reference list -->
+  <!-- Main reference content -->
   <main class="container">
     <section class="content">
-      <!-- Heading for the page -->
-      <h1>References &amp; Resources</h1>
 
-      <!-- Quick links to top sources with external references -->
+      <!-- Main heading -->
+      <h1>References &amp; Resources</h1>
+      <p class="lede">These sources support the research presented across all project pages.</p>
+
+      <!-- Top recommended external resources -->
       <ul class="refs">
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview" target="_blank" rel="noopener">MDN: Overview of HTTP</a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP" target="_blank" rel="noopener">MDN: Evolution of HTTP</a></li>
@@ -50,18 +54,34 @@
         <li><a href="https://research.mozilla.org/files/2025/03/the_state_of_https_adoption_on_the_web.pdf" target="_blank" rel="noopener">Mozilla: The State of HTTPS Adoption (2025)</a></li>
       </ul>
 
-      <!-- Citation list for report submission -->
-      <p class="small">
-      <p class="small">Adib, Azfar. “Challenges of HTTPS.” APNIC Blog, 12 Oct. 2016, blog.apnic.net/2016/10/13/challenges-of-https/.
-Cloudflare What Is HTTP? | Cloudflare, 2024, www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/.
-Cloudflare What Is HTTP/3? | Cloudflare, 2024, www.cloudflare.com/learning/performance/what-is-http3/.
-Grigorik, Ilya. “HTTP: Brief History of HTTP - High Performance Browser Networking (o’reilly).” High Performance Browser Networking, O’Reilly, 30 Nov. 2015, hpbn.co/brief-history-of-http/.
-Kerschbaumer, Christoph. The State of HTTPS Adoption on the Web, 2025, research.mozilla.org/files/2025/03/the_state_of_https_adoption_on_the_web.pdf.
-Marx, Robin. “The Challenges Ahead for HTTP/3.” Internet Society Pulse, 25 July 2023, pulse.internetsociety.org/blog/the-challenges-ahead-for-http-3.
-MozDevNet. “Evolution of HTTP.” MDN Blog RSS, developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP.
-MozDevNet. “Overview of HTTP.” MDN Blog RSS, developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview.
-MozDevNet. “Resources and Specifications.” MDN Blog RSS, developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Resources_and_specifications.
-Ritvo, Dalia  Topelson. Harvard, Mar. 2017, clinic.cyber.harvard.edu/wp-content/uploads/2017/03/2017-03_governance-FINAL.pdf.
-</p>
+      <!-- Full formatted reference list -->
+      <h2>Full Citation List</h2>
+      <ul class="refs">
+
+        <li>Adib, Azfar. “Challenges of HTTPS.” <em>APNIC Blog</em>, 12 Oct. 2016. https://blog.apnic.net/2016/10/13/challenges-of-https/.</li>
+
+        <li>Cloudflare. “What Is HTTP?” 2024. https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/.</li>
+
+        <li>Cloudflare. “What Is HTTP/3?” 2024. https://www.cloudflare.com/learning/performance/what-is-http3/.</li>
+
+        <li>Grigorik, Ilya. “HTTP: Brief History of HTTP.” <em>High Performance Browser Networking</em>, O’Reilly, 2015. https://hpbn.co/brief-history-of-http/.</li>
+
+        <li>Kerschbaumer, Christoph. “The State of HTTPS Adoption on the Web.” Mozilla Research, 2025. https://research.mozilla.org/files/2025/03/the_state_of_https_adoption_on_the_web.pdf.</li>
+
+        <li>Marx, Robin. “The Challenges Ahead for HTTP/3.” <em>Internet Society Pulse</em>, 25 July 2023. https://pulse.internetsociety.org/blog/the-challenges-ahead-for-http-3.</li>
+
+        <li>MozDevNet. “Evolution of HTTP.” MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP.</li>
+
+        <li>MozDevNet. “Overview of HTTP.” MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview.</li>
+
+        <li>MozDevNet. “Resources and Specifications.” MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Resources_and_specifications.</li>
+
+        <li>Ritvo, Dalia Topelson. “Internet Governance Report.” Harvard Cyberlaw Clinic, Mar. 2017. https://clinic.cyber.harvard.edu/wp-content/uploads/2017/03/2017-03_governance-FINAL.pdf.</li>
+
+      </ul>
+
     </section>
   </main>
+
+</body>
+</html>
