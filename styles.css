@@ -338,3 +338,37 @@ textarea:focus-visible {
   .quiz-card { padding: .75rem; }
   fieldset { padding: .75rem; }
 }
+
+/* ===== MOBILE QUIZ FIX ===== */
+@media (max-width: 600px) {
+
+  .quiz-card {
+    padding: .75rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  fieldset {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .q {
+    max-width: 100%;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  .options label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    white-space: normal;
+  }
+}
